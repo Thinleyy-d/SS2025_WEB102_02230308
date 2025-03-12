@@ -1,0 +1,268 @@
+  <!-- Add this after the first endpoint div -->
+  <div class="endpoint">
+    <span class="method get">GET</span>
+    <span class="url">/api/users/:id</span>
+    <p>Get a specific user by ID</p>
+    
+    <h3>Parameters</h3>
+    <table>
+      <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>String</td>
+        <td>User ID</td>
+      </tr>
+    </table>
+    
+    <h3>Response</h3>
+    <pre>
+{
+  "success": true,
+  "data": {
+    "id": "1",
+    "username": "traveler",
+    "full_name": "Karma",
+    "profile_picture": "https://example.com/profiles/traveler.jpg",
+    "bio": "Travel photographer",
+    "created_at": "2023-01-15"
+  }
+}
+    </pre>
+  </div>
+
+  <div class="endpoint">
+    <span class="method post">POST</span>
+    <span class="url">/api/users</span>
+    <p>Create a new user</p>
+    
+    <h3>Request Body</h3>
+    <pre>
+{
+  "username": "new_traveler",
+  "email": "new@example.com",
+  "password": "securepassword",
+  "full_name": "New Traveler",
+  "bio": "Adventure seeker"
+}
+    </pre>
+
+    <h3>Response</h3>
+    <pre>
+{
+  "success": true,
+  "data": {
+    "id": "4",
+    "username": "new_traveler",
+    "full_name": "New Traveler",
+    "email": "new@example.com",
+    "profile_picture": "default-profile.jpg",
+    "bio": "Adventure seeker",
+    "created_at": "2023-03-20"
+  }
+}
+    </pre>
+  </div>
+
+    <!-- PUT Endpoint for updating a user -->
+    <div class="endpoint">
+        <span class="method put">PUT</span>
+        <span class="url">/api/users/:id</span>
+        <p>Update a user's information by ID</p>
+        
+        <h3>Request Body</h3>
+        <pre>
+    {
+      "username": "updated_traveler",
+      "email": "updated@example.com",
+      "full_name": "Updated Traveler",
+      "bio": "Experienced traveler"
+    }
+        </pre>
+    
+        <h3>Response</h3>
+        <pre>
+    {
+      "success": true,
+      "data": {
+        "id": "1",
+        "username": "updated_traveler",
+        "full_name": "Updated Traveler",
+        "email": "updated@example.com",
+        "profile_picture": "updated-profile.jpg",
+        "bio": "Experienced traveler",
+        "created_at": "2023-01-15"
+      }
+    }
+        </pre>
+      </div>
+    
+      <!-- DELETE Endpoint for deleting a user -->
+      <div class="endpoint">
+        <span class="method delete">DELETE</span>
+        <span class="url">/api/users/:id</span>
+        <p>Delete a user by ID</p>
+        
+        <h3>Response</h3>
+        <pre>
+    {
+      "success": true,
+      "message": "User deleted successfully"
+    }
+        </pre>
+      </div>
+    
+      <!-- Add endpoints for posts -->
+      <div class="endpoint">
+        <span class="method get">GET</span>
+        <span class="url">/api/posts</span>
+        <p>Get all posts</p>
+        
+        <h3>Response</h3>
+        <pre>
+    [
+      {
+        "id": "1",
+        "user_id": "1",
+        "content": "Exploring the mountains!",
+        "created_at": "2023-01-15"
+      },
+      {
+        "id": "2",
+        "user_id": "2",
+        "content": "Sunset by the beach.",
+        "created_at": "2023-02-20"
+      }
+    ]
+        </pre>
+      </div>
+    
+      <!-- POST Endpoint for creating a post -->
+      <div class="endpoint">
+        <span class="method post">POST</span>
+        <span class="url">/api/posts</span>
+        <p>Create a new post</p>
+        
+        <h3>Request Body</h3>
+        <pre>
+    {
+      "user_id": "1",
+      "content": "New adventure begins!"
+    }
+        </pre>
+    
+        <h3>Response</h3>
+        <pre>
+    {
+      "success": true,
+      "data": {
+        "id": "3",
+        "user_id": "1",
+        "content": "New adventure begins!",
+        "created_at": "2023-03-10"
+      }
+    }
+        </pre>
+      </div>
+    
+      <!-- Add endpoints for comments -->
+      <div class="endpoint">
+        <span class="method get">GET</span>
+        <span class="url">/api/posts/:post_id/comments</span>
+        <p>Get all comments for a post</p>
+        
+        <h3>Response</h3>
+        <pre>
+    [
+      {
+        "id": "1",
+        "post_id": "1",
+        "user_id": "2",
+        "content": "Amazing view!",
+        "created_at": "2023-01-16"
+      }
+    ]
+        </pre>
+      </div>
+    
+      <!-- POST Endpoint for adding a comment -->
+      <div class="endpoint">
+        <span class="method post">POST</span>
+        <span class="url">/api/posts/:post_id/comments</span>
+        <p>Add a comment to a post</p>
+        
+        <h3>Request Body</h3>
+        <pre>
+    {
+      "user_id": "3",
+      "content": "Incredible landscape!"
+    }
+        </pre>
+    
+        <h3>Response</h3>
+        <pre>
+    {
+      "success": true,
+      "data": {
+        "id": "2",
+        "post_id": "1",
+        "user_id": "3",
+        "content": "Incredible landscape!",
+        "created_at": "2023-03-10"
+      }
+    }
+        </pre>
+      </div>
+    
+      <!-- Add endpoints for likes -->
+      <div class="endpoint">
+        <span class="method post">POST</span>
+        <span class="url">/api/posts/:post_id/likes</span>
+        <p>Like a post</p>
+        
+        <h3>Response</h3>
+        <pre>
+    {
+      "success": true,
+      "message": "Post liked successfully"
+    }
+        </pre>
+      </div>
+    
+      <!-- Add endpoints for followers -->
+      <div class="endpoint">
+        <span class="method post">POST</span>
+        <span class="url">/api/users/:user_id/follow</span>
+        <p>Follow a user</p>
+        
+        <h3>Response</h3>
+        <pre>
+    {
+      "success": true,
+      "message": "User followed successfully"
+    }
+        </pre>
+      </div>
+    
+      <div class="endpoint">
+        <span class="method delete">DELETE</span>
+        <span class="url">/api/users/:user_id/follow</span>
+        <p>Unfollow a user</p>
+        
+        <h3>Response</h3>
+        <pre>
+    {
+      "success": true,
+      "message": "User unfollowed successfully"
+    }
+        </pre>
+      </div>
+    
+    </body>
+    </html>
+    
+</body>
+</html>
