@@ -37,34 +37,34 @@ This API handles video uploads, user management, comments, likes, and follows - 
 ## API Endpoints
 
 ### Videos 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/videos` | Get all videos |
-| GET | `/api/videos/:id` | Get specific video |
-| POST | `/api/videos` | Upload new video |
-| PUT | `/api/videos/:id` | Update video |
-| DELETE | `/api/videos/:id` | Delete video |
-| GET | `/api/videos/:id/comments` | Get video comments |
-| POST | `/api/videos/:id/likes` | Like/unlike video |
+| Method | Endpoint                   | Description        |
+|--------|----------------------------|--------------------|
+| GET    | `/api/videos`              | Get all videos     |
+| GET    | `/api/videos/:id`          | Get specific video |
+| POST   | `/api/videos`              | Upload new video   |
+| PUT    | `/api/videos/:id`          | Update video       |
+| DELETE | `/api/videos/:id`          | Delete video       |
+| GET    | `/api/videos/:id/comments` | Get video comments |
+| POST   | `/api/videos/:id/likes`    | Like/unlike video  |
 
 ### Users 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/users` | Get all users |
-| GET | `/api/users/:id` | Get user profile |
-| POST | `/api/users` | Create new user |
-| PUT | `/api/users/:id` | Update profile |
-| GET | `/api/users/:id/videos` | Get user's videos |
-| POST | `/api/users/:id/followers` | Follow/unfollow user |
+| Method | Endpoint                   | Description          |
+|--------|----------------------------|----------------------|
+| GET    | `/api/users`               | Get all users        |
+| GET 67 | `/api/users/:id`           | Get user profile     |
+| POST   | `/api/users`               | Create new user      |
+| PUT    | `/api/users/:id`           | Update profile       |
+| GET    | `/api/users/:id/videos`    | Get user's videos    |
+| POST   | `/api/users/:id/followers` | Follow/unfollow user |
 
 ### Comments 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/comments` | Get all comments |
-| POST | `/api/comments` | Create comment |
-| PUT | `/api/comments/:id` | Update comment |
-| DELETE | `/api/comments/:id` | Delete comment |
-| POST | `/api/comments/:id/likes` | Like/unlike comment |
+| Method | Endpoint                  | Description         |
+|--------|---------------------------|---------------------|
+| GET    | `/api/comments`           | Get all comments    |
+| POST   | `/api/comments`           | Create comment      |
+| PUT    | `/api/comments/:id`       | Update comment      |
+| DELETE | `/api/comments/:id`       | Delete comment      |
+| POST   | `/api/comments/:id/likes` | Like/unlike comment |
 
 ## Example Usage
 
